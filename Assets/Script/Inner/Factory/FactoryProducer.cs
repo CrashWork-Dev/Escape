@@ -1,13 +1,12 @@
 ﻿namespace Script.Inner.Factory
 {
-    public class FactoryProducer
+    public static class FactoryProducer
     {
-        public static AbstractFactory GetFactory(string choice)
+        public static AbstractFactory GetFactory(string which)
         {
-            return choice switch
+            return which switch
             {
-                "Monster" => new MonsterAbstractFactory(),
-                _ => new MonsterAbstractFactory()
+                _ => new MonsterFactory()
             };
         }
     }

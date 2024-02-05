@@ -6,11 +6,11 @@ namespace Script
     public class Main : MonoBehaviour
     {
         public static MonsterPool MonsterPool;
-        public static AbstractFactory Factory;
+        public static AbstractFactory MonsterFactory;
         private void Awake()
         {
             MonsterPool = gameObject.AddComponent<MonsterPool>();
-            Factory = FactoryProducer.GetFactory("Monster");
+            MonsterFactory = FactoryProducer.GetFactory("Monster");
         }
     }
 }

@@ -5,15 +5,18 @@ namespace Script.Inner.Pool
 {
     public class MonsterPool : MonoBehaviour
     {
-        public static ObjectPool<GameObject> Pool;
+        private ObjectPool<GameObject> _pool;
         private GameObject _monster;
 
         public void Init(GameObject monster)
         {
             _monster = monster;
-            Pool = new ObjectPool<GameObject>(CreateFunc, ActionOnGet, ActionOnRelease, ActionOnDestroy, true, 1, 4);
+            _pool = new ObjectPool<GameObject>(CreateFunc,ActionOnGet,ActionOnRelease,ActionOnDestroy,true,1,4);
         }
-
+        private GameObject CreateFunc()
+        {
+            return Main.MonsterFactory.Spawn(_monster);
+        }
         private void ActionOnDestroy(GameObject obj)
         {
             Destroy(obj);
@@ -31,17 +34,14 @@ namespace Script.Inner.Pool
 
         public void Release(GameObject obj)
         {
-            Pool.Release(obj);
+            _pool.Release(obj);
         }
 
-        public GameObject Spawn()
+        public GameObject Spawn(GameObject parent)
         {
-            return Pool.Get();
-        }
-        
-        private GameObject CreateFunc()
-        {
-            return Main.Factory.Spawn(_monster);
+            var temp = _pool.Get();
+            temp.transform.position = parent.transform.position;
+            return temp;
         }
     }
 }
