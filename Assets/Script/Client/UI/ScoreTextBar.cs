@@ -1,4 +1,5 @@
 ﻿using Script.Inner.Object;
+using Script.Inner.Object.Base;
 using TMPro;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace Script.Client.UI
 
         private void FixedUpdate()
         {
-            _textMeshProUGUI.text = Base.Hp.ToString();
+            _textMeshProUGUI.text = "BaseHP: " + Base.Hp;
         }
     }
 }

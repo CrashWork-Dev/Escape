@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Script.Inner.Object
+namespace Script.Inner.Object.Base
 {
     public class Base : MonoBehaviour
     {

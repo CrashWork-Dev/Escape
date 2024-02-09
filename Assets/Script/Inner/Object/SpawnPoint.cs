@@ -6,7 +6,7 @@ namespace Script.Inner.Object
     public class SpawnPoint : MonoBehaviour
     {
         [SerializeField] private GameObject[] monsterList;
-        private void Awake()
+        private void Start()
         {
             Main.MonsterPool.Init(monsterList[0]);
             StartCoroutine(EnemySpawn());
@@ -15,7 +15,7 @@ namespace Script.Inner.Object
         {
             yield return new WaitForSeconds(2);
             Main.MonsterPool.Spawn(gameObject);
-            EnemySpawn();
+            StartCoroutine(EnemySpawn());
         }
     }
 }

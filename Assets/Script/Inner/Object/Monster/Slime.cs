@@ -16,7 +16,8 @@ namespace Script.Inner.Object.Monster
         
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Main.MonsterPool.Release(gameObject);
+            if(other.gameObject.tag.Equals("Base"))
+                Main.MonsterPool.Release(gameObject);
         }
     }
 }
