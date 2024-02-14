@@ -1,5 +1,4 @@
-﻿using Script.Inner.Object;
-using Script.Inner.Object.Base;
+﻿using Script.Inner.Object.Base;
 using TMPro;
 using UnityEngine;
 

@@ -15,26 +15,26 @@ namespace Script.Client
 
             var scaleHeight = windowAspect / TargetAspect;
 
-            if (scaleHeight < 1.0f)
+            if (scaleHeight < 1)
             {
                 var rect = _mainCamera.rect;
 
-                rect.width = 1.0f;
+                rect.width = 1;
                 rect.height = scaleHeight;
                 rect.x = 0;
-                rect.y = (1.0f - scaleHeight) / 2.0f;
+                rect.y = (1 - scaleHeight) / 2;
 
                 _mainCamera.rect = rect;
             }
             else
             {
-                var scaleWidth = 1.0f / scaleHeight;
+                var scaleWidth = 1 / scaleHeight;
 
                 var rect = _mainCamera.rect;
 
                 rect.width = scaleWidth;
-                rect.height = 1.0f;
-                rect.x = (1.0f - scaleWidth) / 2.0f;
+                rect.height = 1;
+                rect.x = (1 - scaleWidth) / 2;
                 rect.y = 0;
 
                 _mainCamera.rect = rect;

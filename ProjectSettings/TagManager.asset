@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Base
+  - Save
+  - Edge
+  - Hook
   layers:
   - Default
   - TransparentFX
