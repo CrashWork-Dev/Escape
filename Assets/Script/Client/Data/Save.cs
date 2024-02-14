@@ -25,18 +25,16 @@ namespace Script.Client.Data
             filePath = Application.persistentDataPath + "/" + "PlayerData.json";
         }
 
-        public void Saving(bool save)
+        public void Saving()
         {
-            if (!save) return;
             _playerData.Hp = Base.Hp;
             json = JsonUtility.ToJson(_playerData);
             _text.text = json;
             File.WriteAllText(filePath,json);
         }
 
-        public void Loading(bool load)
+        public void Loading()
         {
-            if (!load) return;
             if (File.Exists(filePath))
             {
                 json = File.ReadAllText(filePath);

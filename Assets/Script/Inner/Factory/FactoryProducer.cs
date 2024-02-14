@@ -1,4 +1,6 @@
-﻿namespace Script.Inner.Factory
+﻿using UnityEngine;
+
+namespace Script.Inner.Factory
 {
     public static class FactoryProducer
     {
@@ -6,7 +8,7 @@
         {
             return which switch
             {
-                _ => new MonsterFactory()
+                _ => ScriptableObject.CreateInstance<MonsterFactory>()
             };
         }
     }

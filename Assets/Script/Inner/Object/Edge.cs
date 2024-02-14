@@ -7,11 +7,9 @@ namespace Script.Inner.Object
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag.Equals("Hook"))
-            {
-                Hook.Stop = true;
-                Hook.CanRestore = true;
-            }
+            if (!other.tag.Equals("Hook")) return;
+            Hook.Stop = true;
+            Hook.CanRestore = true;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Script.Inner.Factory
 {
-    public abstract class AbstractFactory : MonoBehaviour
+    public abstract class AbstractFactory : ScriptableObject
     {
         public abstract GameObject Spawn(GameObject obj);
     }

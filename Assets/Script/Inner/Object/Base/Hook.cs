@@ -15,11 +15,6 @@ namespace Script.Inner.Object.Base
         public static bool Stop;
         public static bool CanRestore;
 
-        private void Start()
-        {
-            StartCoroutine(Stretch());
-        }
-
         private void Update()
         {
             HookRotate(_canRotate);
@@ -49,15 +44,18 @@ namespace Script.Inner.Object.Base
         {
             if (!Stop) return;
             _canStretch = false;
+            //StopAllCoroutines();
             _canRotate = true;
         }
 
-        public void Shot(bool shooting)
+        public void Shot()
         {
-            if (!shooting) return;
-
             Stop = false;
             _canRotate = false;
+            if (!_canStretch)
+            {
+                StartCoroutine(Stretch());
+            }
             _canStretch = true;
             hookRoot.transform.Rotate(Vector3.zero);
         }
@@ -65,14 +63,12 @@ namespace Script.Inner.Object.Base
 
         private IEnumerator Stretch()
         {
-            if (_canStretch)
-            {
-                var temp = hookRoot.transform.localScale;
-                temp.x += 0.04f;
-                hookRoot.transform.localScale = temp;
-            }
+            var temp = hookRoot.transform.localScale;
+            temp.x += 0.04f;
+            hookRoot.transform.localScale = temp;
 
             yield return new WaitForSeconds(0.02f);
+            if(!_canStretch) yield break;
             StartCoroutine(Stretch());
         }
     }

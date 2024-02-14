@@ -207,9 +207,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1402979187}
-        m_TargetAssemblyTypeName: Script.Inner.Object.Base.HookRoot, Assembly-CSharp
+        m_TargetAssemblyTypeName: Script.Inner.Object.Base.Hook, Assembly-CSharp
         m_MethodName: Shot
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -278,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 1254981150814795611, guid: 54438c6f0e116ac4eb3b7f02368e4ccc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1254981150814795611, guid: 54438c6f0e116ac4eb3b7f02368e4ccc,
         type: 3}
@@ -458,6 +458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Close Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7073346687257052426, guid: 363f1e424d5e7fa40b7181fc5586a869,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7073346687257052427, guid: 363f1e424d5e7fa40b7181fc5586a869,
         type: 3}
@@ -1381,7 +1386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16214094a13a41ba92302cdf9a14a566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hookRoot: {fileID: 261635177}
 --- !u!68 &917368900
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2065,7 +2069,7 @@ PrefabInstance:
     - target: {fileID: 720285275044460857, guid: 767d54a212d487e4b810ed9a97bdb865,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 720285275044460857, guid: 767d54a212d487e4b810ed9a97bdb865,
         type: 3}

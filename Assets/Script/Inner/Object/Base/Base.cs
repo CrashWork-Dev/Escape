@@ -6,7 +6,7 @@ namespace Script.Inner.Object.Base
     {
         public static int Hp = 100;
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter2D()
         {
             Hp--;
         }
