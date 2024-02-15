@@ -8,6 +8,7 @@ namespace Script.Inner.Factory
         {
             return which switch
             {
+                "Supply" => ScriptableObject.CreateInstance<SupplyFactory>(),
                 _ => ScriptableObject.CreateInstance<MonsterFactory>()
             };
         }

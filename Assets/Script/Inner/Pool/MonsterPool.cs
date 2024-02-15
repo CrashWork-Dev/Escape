@@ -11,12 +11,14 @@ namespace Script.Inner.Pool
         public void Init(GameObject monster)
         {
             _monster = monster;
-            _pool = new ObjectPool<GameObject>(CreateFunc,ActionOnGet,ActionOnRelease,ActionOnDestroy,true,1,4);
+            _pool = new ObjectPool<GameObject>(CreateFunc, ActionOnGet, ActionOnRelease, ActionOnDestroy, true, 1, 4);
         }
+
         private GameObject CreateFunc()
         {
             return Main.MonsterFactory.Spawn(_monster);
         }
+
         private void ActionOnDestroy(GameObject obj)
         {
             Destroy(obj);

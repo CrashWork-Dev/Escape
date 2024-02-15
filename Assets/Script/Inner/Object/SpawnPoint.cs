@@ -6,11 +6,13 @@ namespace Script.Inner.Object
     public class SpawnPoint : MonoBehaviour
     {
         [SerializeField] private GameObject[] monsterList;
+
         private void Start()
         {
             Main.MonsterPool.Init(monsterList[0]);
             StartCoroutine(EnemySpawn());
         }
+
         private IEnumerator EnemySpawn()
         {
             yield return new WaitForSeconds(2);

@@ -13,10 +13,10 @@ namespace Script.Inner.Object.Monster
         {
             AttackBase();
         }
-        
+
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if(other.gameObject.tag.Equals("Base"))
+            if (other.gameObject.tag.Equals("Base"))
                 Main.MonsterPool.Release(gameObject);
         }
     }
