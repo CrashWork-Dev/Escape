@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.IO;
 using Script.Inner.Object.Base;
 using TMPro;
@@ -39,19 +40,26 @@ namespace Script.Client.Data
 
         public void Loading()
         {
-            if (File.Exists(filePath))
+            try
             {
-                json = File.ReadAllText(filePath);
-            }
+                if (File.Exists(filePath))
+                {
+                    json = File.ReadAllText(filePath);
+                }
 
-            if (_text.text != null)
+                if (_text.text != null)
+                {
+                    json = _text.text;
+                }
+
+                _playerData = JsonUtility.FromJson<PlayerDataStruct>(json);
+                Base.Hp = _playerData.Hp;
+                Base.BioMass = _playerData.BioMass;
+            }
+            catch
             {
-                json = _text.text;
+                Debug.Log("无存档");
             }
-
-            _playerData = JsonUtility.FromJson<PlayerDataStruct>(json);
-            Base.Hp = _playerData.Hp;
-            Base.BioMass = _playerData.BioMass;
         }
     }
 }
