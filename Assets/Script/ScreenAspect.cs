@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Script.Gaming.Client
+namespace Script
 {
     public class ScreenAspect : MonoBehaviour
     {
