@@ -8,6 +8,8 @@ TagManager:
   - Save
   - Edge
   - Hook
+  - EndPanel
+  - NormalPanel
   layers:
   - Default
   - TransparentFX
